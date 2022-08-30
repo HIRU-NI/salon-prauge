@@ -10,8 +10,8 @@ const Header = () => {
   return (
     <>
       <Navbar bg="white" expand="sm" className="mb-3 px-5">
-        <Container fluid style={{ left: "10%" }}>
-          <Navbar.Brand href="/">
+        <Container fluid>
+          <Navbar.Brand href="/" className="ms-5 ps-5">
             <img
               src={require("../assets/logo-black.png")}
               height="60"

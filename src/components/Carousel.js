@@ -16,7 +16,7 @@ const AppCarousel = () => {
           }}
         />
         <Carousel.Caption
-          style={{ left: "10%", top: "20%", right: "60%", textAlign: "left" }}
+          style={{ left: "9%", top: "20%", right: "60%", textAlign: "left" }}
         >
           <h1 style={{ fontFamily: "Playfair Display", fontSize: "50px" }}>
             Always make room for beauty in your life
