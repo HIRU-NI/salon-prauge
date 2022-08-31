@@ -13,7 +13,7 @@ const Header = () => {
         <Container fluid>
           <Navbar.Brand href="/" className="ms-5 ps-5">
             <img
-              src={require("../assets/logo-black.png")}
+              src={require("../../assets/logo-black.png")}
               height="60"
               className="d-inline-block align-top"
               alt="React Bootstrap logo"

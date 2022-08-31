@@ -1,0 +1,16 @@
+.slide_main {
+  background-color: #fafafa !important;
+  border: none !important;
+  border-radius: 0 !important;
+  margin-right: 30px !important;
+  margin-left: 10px;
+}
+
+.slide_img {
+  border-radius: 0 !important;
+}
+
+.slide_btn {
+  color: #b99a5f;
+  border-radius: 5px;
+}
