@@ -5,14 +5,13 @@ import Button from "react-bootstrap/Button"
 const AppCarousel = () => {
   return (
     <Carousel indicators={false} controls={false}>
-      <Carousel.Item>
+      <Carousel.Item style={{ background: "#000000" }}>
         <img
           className="d-block w-100"
           src={require("../../assets/carousel-image.png")}
           alt="First slide"
           style={{
-            background:
-              "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #020202 100%)",
+            opacity: 0.4,
           }}
         />
         <Carousel.Caption
