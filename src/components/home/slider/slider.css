@@ -1,9 +1,5 @@
 .slider_main {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  margin-right: 9%;
-  margin-left: 9%;
-  overflow: initial;
+  margin: 5% 9%;
 }
 
 .slider_title {
@@ -15,10 +11,12 @@
 
 .__slider .slick-prev {
   background: black;
+  margin-right: 50px !important;
 }
 
 .__slider .slick-prev:hover {
   background: black;
+  margin-right: 10px !important;
 }
 
 .__slider .slick-next {
@@ -27,4 +25,9 @@
 
 .__slider .slick-next:hover {
   background: black;
+}
+
+.__slider .slick-list {
+  margin-right: 2%;
+  margin-left: 2%;
 }
