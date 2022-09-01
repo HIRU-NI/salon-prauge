@@ -10,7 +10,11 @@ const Slide = ({ title, description, imgPath }) => {
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>{description}</Card.Text>
-        <Button variant="light" className="slide_btn">
+        <Button
+          variant="light"
+          className="slide_btn"
+          style={{ color: "#b99a5f" }}
+        >
           MAKE A RESERVATION
         </Button>
       </Card.Body>
