@@ -4,7 +4,11 @@ import "./about.css"
 const About = () => {
   return (
     <div class="about_main">
-      <div>
+      <img
+        src={require("../../assets/about_background.png")}
+        alt="BackgroundImage"
+      />
+      <div class="about_content">
         <h1 class="about_title">About us</h1>
         <p class="about_text_1">
           Named “Best Salon” by Main Line Magazine & The Philadelphia Inquirer,
