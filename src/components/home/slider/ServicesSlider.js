@@ -2,7 +2,12 @@ import React from "react"
 import Slider from "react-slick"
 import Slide from "./Slide"
 import { forwardRef } from "react"
+
+//styles
 import "./slider.css"
+
+//data
+import serviceTypes from "../../../api/data"
 
 const settings = {
   dots: false,
@@ -43,36 +48,15 @@ const ServicesSlider = forwardRef((props, ref) => {
     <div class="slider_main" ref={ref}>
       <h2 class="slider_title">Services</h2>
       <Slider {...settings} className="__slider">
-        <Slide
-          title="Haircut"
-          description="Lorem ipsum dolor sit amet, conse adipiscing elit, sed do eiusmod tempor incididunt ut."
-          imgPath={require("../../../assets/services-image-1.png")}
-        />
-        <Slide
-          title="Hair Styling"
-          description="Lorem ipsum dolor sit amet, conse adipiscing elit, sed do eiusmod tempor incididunt ut."
-          imgPath={require("../../../assets/services-image-2.png")}
-        />
-        <Slide
-          title="Makeup"
-          description="Lorem ipsum dolor sit amet, conse adipiscing elit, sed do eiusmod tempor incididunt ut."
-          imgPath={require("../../../assets/services-image-3.png")}
-        />
-        <Slide
-          title="Haircut"
-          description="Lorem ipsum dolor sit amet, conse adipiscing elit, sed do eiusmod tempor incididunt ut."
-          imgPath={require("../../../assets/services-image-1.png")}
-        />
-        <Slide
-          title="Hair Styling"
-          description="Lorem ipsum dolor sit amet, conse adipiscing elit, sed do eiusmod tempor incididunt ut."
-          imgPath={require("../../../assets/services-image-2.png")}
-        />
-        <Slide
-          title="Makeup"
-          description="Lorem ipsum dolor sit amet, conse adipiscing elit, sed do eiusmod tempor incididunt ut."
-          imgPath={require("../../../assets/services-image-3.png")}
-        />
+        {serviceTypes.map((service) => {
+          return (
+            <Slide
+              title={service.title}
+              description="Lorem ipsum dolor sit amet, conse adipiscing elit, sed do eiusmod tempor incididunt ut."
+              imgPath={service.img}
+            />
+          )
+        })}
       </Slider>
     </div>
   )
