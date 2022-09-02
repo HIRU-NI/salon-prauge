@@ -1,4 +1,9 @@
 import React from "react"
+
+//react-router
+import { Link } from "react-router-dom"
+
+//react-bootstrap components
 import Button from "react-bootstrap/Button"
 import Container from "react-bootstrap/Container"
 import Form from "react-bootstrap/Form"
@@ -33,9 +38,10 @@ const Header = ({ aboutRef, servicesRef }) => {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1">
-                <Nav.Link className="px-5 fs-5 text-reset" to="/">
+                <Nav.Link as={Link} className="px-5 fs-5 text-reset" to="/">
                   Home
                 </Nav.Link>
+
                 <Nav.Link
                   className="px-5 fs-5 text-reset"
                   onClick={handleScrolltoAbout}

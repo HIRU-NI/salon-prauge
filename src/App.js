@@ -1,5 +1,6 @@
 import Header from "./components/home/Header"
 import Home from "./pages/Home"
+import Service from "./pages/Service"
 
 import { useRef } from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
@@ -36,7 +37,8 @@ function App() {
           <Route
             path="/"
             element={<Home aboutRef={aboutRef} servicesRef={servicesRef} />}
-          ></Route>
+          />
+          <Route path="/service" element={<Service />} />
         </Routes>
       </Router>
     </>
