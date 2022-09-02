@@ -1,9 +1,11 @@
 import React from "react"
+import { forwardRef } from "react"
+
 import "./about.css"
 
-const About = () => {
+const About = forwardRef((props, ref) => {
   return (
-    <div class="about_main">
+    <div class="about_main" ref={ref}>
       <img
         src={require("../../assets/about_background.png")}
         alt="BackgroundImage"
@@ -26,6 +28,6 @@ const About = () => {
       </div>
     </div>
   )
-}
+})
 
 export default About

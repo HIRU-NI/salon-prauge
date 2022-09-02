@@ -1,6 +1,7 @@
 import React from "react"
 import Slider from "react-slick"
 import Slide from "./Slide"
+import { forwardRef } from "react"
 import "./slider.css"
 
 const settings = {
@@ -37,9 +38,9 @@ const settings = {
   ],
 }
 
-const ServicesSlider = () => {
+const ServicesSlider = forwardRef((props, ref) => {
   return (
-    <div class="slider_main">
+    <div class="slider_main" ref={ref}>
       <h2 class="slider_title">Services</h2>
       <Slider {...settings} className="__slider">
         <Slide
@@ -75,6 +76,6 @@ const ServicesSlider = () => {
       </Slider>
     </div>
   )
-}
+})
 
 export default ServicesSlider

@@ -6,7 +6,14 @@ import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 import Offcanvas from "react-bootstrap/Offcanvas"
 
-const Header = () => {
+const Header = ({ aboutRef, servicesRef }) => {
+  const handleScrolltoAbout = () => {
+    aboutRef.current.scrollIntoView({ behavior: "smooth", block: "center" })
+  }
+
+  const handleScrolltoServices = () => {
+    servicesRef.current.scrollIntoView({ behavior: "smooth", block: "center" })
+  }
   return (
     <>
       <Navbar bg="white" expand="sm" className="mb-3 px-5">
@@ -26,13 +33,19 @@ const Header = () => {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1">
-                <Nav.Link className="px-5 fs-5 text-reset" href="#action1">
+                <Nav.Link className="px-5 fs-5 text-reset" to="/">
                   Home
                 </Nav.Link>
-                <Nav.Link className="px-5 fs-5 text-reset" href="#action2">
+                <Nav.Link
+                  className="px-5 fs-5 text-reset"
+                  onClick={handleScrolltoAbout}
+                >
                   About
                 </Nav.Link>
-                <Nav.Link className="px-5 fs-5 text-reset" href="#action2">
+                <Nav.Link
+                  className="px-5 fs-5 text-reset"
+                  onClick={handleScrolltoServices}
+                >
                   Services
                 </Nav.Link>
                 <Nav.Link className="px-5 fs-5 text-reset" href="#action2">
