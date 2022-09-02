@@ -1,7 +1,5 @@
 import Header from "./components/home/Header"
-import Carousel from "./components/home/Carousel"
-import ServicesSlider from "./components/home/slider/ServicesSlider"
-import About from "./components/home/About"
+import Home from "./pages/Home/index.js"
 
 import { useRef } from "react"
 
@@ -16,9 +14,7 @@ function App() {
   return (
     <>
       <Header aboutRef={aboutRef} servicesRef={servicesRef} />
-      <Carousel />
-      <ServicesSlider ref={servicesRef} />
-      <About ref={aboutRef} />
+      <Home aboutRef={aboutRef} servicesRef={servicesRef} />
     </>
   )
 }
