@@ -5,7 +5,7 @@ import "./about.css"
 
 const About = forwardRef((props, ref) => {
   return (
-    <div class="about_main" ref={ref}>
+    <div class="about_main" ref={ref} id="about">
       <img
         src={require("../../assets/about_background.png")}
         alt="BackgroundImage"

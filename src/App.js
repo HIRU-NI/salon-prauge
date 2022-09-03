@@ -19,9 +19,10 @@ import "slick-carousel/slick/slick-theme.css"
 
 const Wrapper = ({ children }) => {
   const location = useLocation()
+  const { targetId } = location.state || {}
   useLayoutEffect(() => {
-    document.documentElement.scrollTo(0, 0)
-  }, [location.pathname])
+    if (!targetId) document.documentElement.scrollTo(0, 0)
+  }, [location.pathname, targetId])
   return children
 }
 
