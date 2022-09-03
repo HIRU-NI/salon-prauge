@@ -7,26 +7,24 @@ import Button from "react-bootstrap/Button"
 //react-router
 import { Link } from "react-router-dom"
 
+//styles
+import "../../assets/styles/carousel.css"
+
 const AppCarousel = () => {
   return (
-    <Carousel indicators={false} controls={false}>
-      <Carousel.Item style={{ background: "#000000" }}>
+    <Carousel indicators={false} controls={false} className="carousel_main">
+      <Carousel.Item className="carousel_item">
         <img
           className="d-block w-100"
           src={require("../../assets/carousel-image.png")}
           alt="First slide"
-          style={{
-            opacity: 0.4,
-          }}
         />
-        <Carousel.Caption
-          style={{ left: "9%", top: "20%", right: "60%", textAlign: "left" }}
-        >
-          <h1 style={{ fontFamily: "Playfair Display", fontSize: "50px" }}>
+        <Carousel.Caption className="carousel_caption">
+          <h1 class="carousel_title">
             Always make room for beauty in your life
           </h1>
           <br />
-          <p style={{ fontSize: "18px" }}>
+          <p class="carousel_text">
             At Prauge we are passionate about making people feel good while
             looking their best. Attending advanced education allows us to keep
             up with the latest trends and provide each guest with a unique &

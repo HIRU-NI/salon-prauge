@@ -1,0 +1,41 @@
+.carousel_main {
+  background: #000000;
+}
+
+.carousel_item img {
+  opacity: 0.4;
+}
+
+.carousel_caption {
+  left: 9% !important;
+  top: 20% !important;
+  right: 60% !important;
+  text-align: left !important;
+}
+
+.carousel_title {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 99%;
+  /* or 50px */
+
+  letter-spacing: -0.03em;
+
+  /* Pearl White */
+
+  color: #ffffff;
+}
+
+@media (max-width: 1390px) {
+  .carousel_title {
+    font-size: 38px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel_caption {
+    display: none;
+  }
+}
