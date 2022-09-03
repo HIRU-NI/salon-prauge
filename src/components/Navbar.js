@@ -11,6 +11,9 @@ import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 import Offcanvas from "react-bootstrap/Offcanvas"
 
+//styles
+import "../assets/styles/navbar.css"
+
 const Header = ({ aboutRef, servicesRef }) => {
   const handleScrolltoAbout = () => {
     aboutRef.current.scrollIntoView({ behavior: "smooth", block: "center" })
@@ -21,12 +24,12 @@ const Header = ({ aboutRef, servicesRef }) => {
   }
   return (
     <>
-      <Navbar bg="white" expand="sm" className="mb-3 px-5">
+      <Navbar bg="white" expand="md" className="navbar_main" fixed="top">
         <Container fluid>
-          <Navbar.Brand href="/" className="ms-5 ps-5">
+          <Navbar.Brand href="/">
             <img
               src={require("../assets/logo-black.png")}
-              height="60"
+              height="46"
               className="d-inline-block align-top"
               alt="React Bootstrap logo"
             />
@@ -38,29 +41,33 @@ const Header = ({ aboutRef, servicesRef }) => {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1">
-                <Nav.Link as={Link} className="px-5 fs-5 text-reset" to="/">
+                <Nav.Link as={Link} className="text-reset navbar_link" to="/">
                   Home
                 </Nav.Link>
 
                 <Nav.Link
-                  className="px-5 fs-5 text-reset"
+                  className="text-reset navbar_link"
                   onClick={handleScrolltoAbout}
                 >
                   About
                 </Nav.Link>
                 <Nav.Link
-                  className="px-5 fs-5 text-reset"
+                  className="text-reset navbar_link"
                   onClick={handleScrolltoServices}
                 >
                   Services
                 </Nav.Link>
-                <Nav.Link className="px-5 fs-5 text-reset" href="#action2">
+                <Nav.Link
+                  as={Link}
+                  className="text-reset navbar_link"
+                  to="/booking"
+                >
                   Shop
                 </Nav.Link>
               </Nav>
               <Form className="d-flex ps-4 me-5">
                 <Link to="booking">
-                  <Button variant="dark fs-5" size="lg">
+                  <Button variant="dark" size="lg">
                     Book now
                   </Button>
                 </Link>
