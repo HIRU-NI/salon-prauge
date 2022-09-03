@@ -5,16 +5,26 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Button from "react-bootstrap/Button"
 
+//styles
 import "../assets/styles/serviceDetails.css"
 
-const ServiceDetails = () => {
+//data
+import serviceTypes from "../api/data"
+
+const ServiceDetails = ({ serviceId }) => {
   return (
     <>
       <Container fluid className="servicedetails_main">
         <Row className="servicedetails_row">
           <Col>
             <div class="servicedetails_content">
-              <h1>Haircut</h1>
+              <h1>
+                {
+                  serviceTypes.find((type) => {
+                    return type.id === serviceId
+                  }).title
+                }
+              </h1>
               <p>
                 At Prauge we are passionate about making people feel good while
                 looking their best. Attending advanced education allows us to
@@ -30,7 +40,11 @@ const ServiceDetails = () => {
           </Col>
           <Col className="servicedetails_image">
             <img
-              src={require("../assets/services-image-3.png")}
+              src={
+                serviceTypes.find((type) => {
+                  return type.id === serviceId
+                }).img
+              }
               alt="ServiceImage"
             />
           </Col>

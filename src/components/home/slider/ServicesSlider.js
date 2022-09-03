@@ -51,6 +51,8 @@ const ServicesSlider = forwardRef((props, ref) => {
         {serviceTypes.map((service) => {
           return (
             <Slide
+              key={service.id}
+              id={service.id}
               title={service.title}
               description="Lorem ipsum dolor sit amet, conse adipiscing elit, sed do eiusmod tempor incididunt ut."
               imgPath={service.img}

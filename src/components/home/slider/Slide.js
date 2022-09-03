@@ -10,19 +10,18 @@ import Button from "react-bootstrap/Button"
 //styles
 import "./slide.css"
 
-const Slide = ({ title, description, imgPath }) => {
+const Slide = ({ id, title, description, imgPath }) => {
   return (
     <Card className="slide_main">
       <Card.Img variant="top" src={imgPath} className="slide_img" />
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>{description}</Card.Text>
-        <Link to="/service">
+        <Link to={`service${id}`}>
           <Button
             variant="light"
             className="slide_btn"
             style={{ color: "#b99a5f" }}
-            to="/service"
           >
             MAKE A RESERVATION
           </Button>

@@ -14,34 +14,21 @@ function App() {
   const servicesRef = useRef(null)
 
   return (
-    <>
-      <Router>
-        <Header aboutRef={aboutRef} servicesRef={servicesRef} />
-        {/* <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav> */}
+    <Router>
+      <Header aboutRef={aboutRef} servicesRef={servicesRef} />
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Routes>
-          <Route
-            path="/"
-            element={<Home aboutRef={aboutRef} servicesRef={servicesRef} />}
-          />
-          <Route path="/service" element={<Service />} />
-        </Routes>
-      </Router>
-    </>
+      <Routes>
+        <Route
+          path="/"
+          element={<Home aboutRef={aboutRef} servicesRef={servicesRef} />}
+        />
+        <Route path="service:id" element={<Service />} />
+        <Route
+          path="*"
+          element={<Home aboutRef={aboutRef} servicesRef={servicesRef} />}
+        />
+      </Routes>
+    </Router>
   )
 }
 
