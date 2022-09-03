@@ -1,6 +1,7 @@
-import Header from "./components/home/Header"
+import Header from "./components/Navbar"
 import Home from "./pages/Home"
 import Service from "./pages/Service"
+import Booking from "./pages/Booking"
 
 import { useRef } from "react"
 import { useLayoutEffect } from "react"
@@ -38,6 +39,7 @@ function App() {
             path="/"
             element={<Home aboutRef={aboutRef} servicesRef={servicesRef} />}
           />
+          <Route path="booking" element={<Booking />} />
           <Route path="service:id" element={<Service />} />
           <Route
             path="*"

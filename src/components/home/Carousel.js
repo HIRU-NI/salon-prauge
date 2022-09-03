@@ -1,6 +1,11 @@
 import React from "react"
+
+//react-bootstrap components
 import Carousel from "react-bootstrap/Carousel"
 import Button from "react-bootstrap/Button"
+
+//react-router
+import { Link } from "react-router-dom"
 
 const AppCarousel = () => {
   return (
@@ -29,13 +34,15 @@ const AppCarousel = () => {
             today!
           </p>
           <br />
-          <Button
-            variant="outline-light fs-6"
-            size="lg"
-            style={{ borderRadius: 5, width: "163px", height: "53px" }}
-          >
-            Book Now
-          </Button>{" "}
+          <Link to="booking">
+            <Button
+              variant="outline-light fs-6"
+              size="lg"
+              style={{ borderRadius: 5, width: "163px", height: "53px" }}
+            >
+              Book Now
+            </Button>
+          </Link>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

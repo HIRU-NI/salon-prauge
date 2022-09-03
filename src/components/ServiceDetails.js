@@ -1,5 +1,9 @@
 import React from "react"
 
+//react-router
+import { Link } from "react-router-dom"
+
+//react-bootstrap components
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
@@ -33,9 +37,11 @@ const ServiceDetails = ({ serviceId }) => {
                 your reservation today!
               </p>
               <br />
-              <Button variant="dark" size="lg">
-                Make a Reservation
-              </Button>
+              <Link to="../booking">
+                <Button variant="dark" size="lg">
+                  Make a Reservation
+                </Button>
+              </Link>
             </div>
           </Col>
           <Col className="servicedetails_image">
