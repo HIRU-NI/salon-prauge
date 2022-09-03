@@ -52,7 +52,7 @@ const Header = ({ aboutRef, servicesRef }) => {
           <Navbar.Brand as={Link} to="/">
             <img
               src={require("../assets/logo-black.png")}
-              height="46"
+              height="40"
               className="d-inline-block align-top"
               alt="React Bootstrap logo"
             />
