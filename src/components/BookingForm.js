@@ -1,5 +1,7 @@
 import React from "react"
 
+import Form from "./Form"
+
 //react-bootstrap components
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
@@ -16,6 +18,8 @@ const BookingForm = ({ serviceId }) => {
           <Col>
             <div class="booking_content">
               <h1>Booking details</h1>
+              <br />
+              <Form />
             </div>
           </Col>
           <Col className="booking_image">
