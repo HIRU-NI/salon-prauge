@@ -1,12 +1,12 @@
-.servicedetails_main {
+.booking_main {
   height: 100vh;
 }
 
-.servicedetails_row {
+.booking_row {
   height: 100%;
 }
 
-.servicedetails_content {
+.booking_content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,19 +16,13 @@
   margin-right: 20%;
 }
 
-.servicedetails_content h1 {
+.booking_content h1 {
   font-size: 50px;
   font-family: "Playfair Display";
   font-weight: 600;
 }
 
-.servicedetails_content button {
-  max-width: 300px;
-  font-size: 16px;
-  height: 53px;
-}
-
-.servicedetails_image img {
+.booking_image img {
   width: 100%;
   min-height: 90%;
 }
