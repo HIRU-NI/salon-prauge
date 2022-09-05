@@ -1,0 +1,31 @@
+.success_main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0% 20%;
+  text-align: center;
+  background: #fafafa;
+}
+
+.success_main h1 {
+  font-family: "Playfair Display";
+  font-weight: 600;
+}
+
+.success_text_1 {
+  text-align: center;
+  font-size: 22px;
+  color: #b99a5f;
+}
+
+.success_text_2 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 99%;
+  text-align: center;
+  letter-spacing: -0.03em;
+  color: #a5a5a5;
+  margin-top: 20px;
+}

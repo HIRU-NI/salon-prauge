@@ -2,6 +2,7 @@ import Header from "./components/Navbar"
 import Home from "./pages/Home"
 import Service from "./pages/Service"
 import Booking from "./pages/Booking"
+import Success from "./pages/Success"
 
 import { useRef } from "react"
 import { useLayoutEffect } from "react"
@@ -41,6 +42,7 @@ function App() {
             element={<Home aboutRef={aboutRef} servicesRef={servicesRef} />}
           />
           <Route path="booking" element={<Booking />} />
+          <Route path="success" element={<Success />} />
           <Route path="service:id" element={<Service />} />
           <Route
             path="*"
