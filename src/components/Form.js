@@ -2,6 +2,8 @@ import { React } from "react"
 
 import { useFormik } from "formik"
 
+import StripeCheckout from "react-stripe-checkout"
+
 //react-bootstrap components
 import Button from "react-bootstrap/Button"
 import Col from "react-bootstrap/Col"
@@ -56,6 +58,18 @@ const BookingForm = () => {
       alert(JSON.stringify(values, null, 2))
     },
   })
+
+  const onToken = (token) => {
+    fetch("/payment/donate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token, amount: 25 }),
+    }).then((response) => {
+      response.json().then((data) => {
+        alert(`We are in business, ${data.email}`)
+      })
+    })
+  }
 
   return (
     <Form className="form_main" onSubmit={formik.handleSubmit}>
@@ -164,9 +178,14 @@ const BookingForm = () => {
 
       <h3>Total: USD 25.00</h3>
 
-      <Button type="submit" className="form_button">
-        Pay Now
-      </Button>
+      <StripeCheckout
+        token={onToken}
+        stripeKey="pk_test_51LeVWSKLob5FUcuYmFSmA26aT03O6OjZyr2ZoL6h4k8TKczixIgGBXfLqxYC7RmbKuth4y7IQdQviwrzCpQk30xR00t6EixUab"
+      >
+        <Button type="submit" className="form_button">
+          Pay Now
+        </Button>{" "}
+      </StripeCheckout>
     </Form>
   )
 }
