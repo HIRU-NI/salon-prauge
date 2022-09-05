@@ -53,15 +53,19 @@ const BookingForm = () => {
     },
     validate,
     onSubmit: (values) => {
-      fetch("http://localhost:8080/create-checkout-session", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          id: "001",
-        }),
-      })
+      fetch(
+        "https://salon-prauge-server.herokuapp.com/create-checkout-session",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            id: "001",
+            baseURL: window.location.origin,
+          }),
+        }
+      )
         .then((res) => {
           if (res.ok) return res.json()
           return res.json().then((json) => Promise.reject(json))
