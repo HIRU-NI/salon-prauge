@@ -2,8 +2,6 @@ import { React } from "react"
 
 import { useFormik } from "formik"
 
-import StripeCheckout from "react-stripe-checkout"
-
 //react-bootstrap components
 import Button from "react-bootstrap/Button"
 import Col from "react-bootstrap/Col"
@@ -55,21 +53,27 @@ const BookingForm = () => {
     },
     validate,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2))
+      fetch("/create-checkout-session", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id: 1,
+        }),
+      })
+        .then((res) => {
+          if (res.ok) return res.json()
+          return res.json().then((json) => Promise.reject(json))
+        })
+        .then(({ url }) => {
+          window.location = url
+        })
+        .catch((e) => {
+          console.log(e.error)
+        })
     },
   })
-
-  const onToken = (token) => {
-    fetch("/payment/donate", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ token, amount: 25 }),
-    }).then((response) => {
-      response.json().then((data) => {
-        alert(`We are in business, ${data.email}`)
-      })
-    })
-  }
 
   return (
     <Form className="form_main" onSubmit={formik.handleSubmit}>
@@ -97,7 +101,6 @@ const BookingForm = () => {
           </Form.Text>
         ) : null}
       </Form.Group>
-
       <Form.Group className="mb-4" controlId="formGridFirstName">
         <Form.Control
           defaultValue={formik.values.first}
@@ -116,7 +119,6 @@ const BookingForm = () => {
           </Form.Text>
         ) : null}
       </Form.Group>
-
       <Form.Group className="mb-4" controlId="formGridLastName">
         <Form.Control
           defaultValue={formik.values.first}
@@ -135,7 +137,6 @@ const BookingForm = () => {
           </Form.Text>
         ) : null}
       </Form.Group>
-
       <Form.Group className="mb-4" controlId="formGridEmail">
         <Form.Control
           type="email"
@@ -154,7 +155,6 @@ const BookingForm = () => {
           </Form.Text>
         ) : null}
       </Form.Group>
-
       <Form.Group className="mb-4" controlId="formGridEmail">
         <Flatpickr
           data-enable-time
@@ -175,17 +175,10 @@ const BookingForm = () => {
           </Form.Text>
         ) : null}
       </Form.Group>
-
       <h3>Total: USD 25.00</h3>
-
-      <StripeCheckout
-        token={onToken}
-        stripeKey="pk_test_51LeVWSKLob5FUcuYmFSmA26aT03O6OjZyr2ZoL6h4k8TKczixIgGBXfLqxYC7RmbKuth4y7IQdQviwrzCpQk30xR00t6EixUab"
-      >
-        <Button type="submit" className="form_button">
-          Pay Now
-        </Button>{" "}
-      </StripeCheckout>
+      <Button type="submit" className="form_button">
+        Pay Now
+      </Button>{" "}
     </Form>
   )
 }
