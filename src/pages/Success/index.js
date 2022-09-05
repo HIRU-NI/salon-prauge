@@ -1,8 +1,32 @@
-import React from "react"
+import { React, useEffect } from "react"
+
+import { useSearchParams } from "react-router-dom"
+
+import emailjs from "@emailjs/browser"
 
 import "../../assets/styles/success.css"
 
 const Success = () => {
+  const [searchParams] = useSearchParams()
+  const first = searchParams.get("first")
+  const date = searchParams.get("date")
+  const time = searchParams.get("time")
+  const email = searchParams.get("email")
+
+  useEffect(() => {
+    emailjs.send(
+      "service_pb2mvgo",
+      "template_p93lvwp",
+      {
+        from_name: "Salon Prauge",
+        to_email: email,
+        to_name: first,
+        date: date,
+        time: time,
+      },
+      "k_VnjZW7VitcxQPvj"
+    )
+  }, [email, date, time, first])
   return (
     <div class="success_main">
       <h1>Thank you for your reservation!</h1>

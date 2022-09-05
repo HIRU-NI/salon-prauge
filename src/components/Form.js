@@ -49,7 +49,7 @@ const BookingForm = () => {
       first: "",
       last: "",
       email: "",
-      date: new Date().toISOString(),
+      date: new Date(),
     },
     validate,
     onSubmit: (values) => {
@@ -63,11 +63,18 @@ const BookingForm = () => {
           body: JSON.stringify({
             id: "001",
             baseURL: window.location.origin,
+            first: values.first,
+            last: values.last,
+            email: values.email,
+            date: values.date.getDate().toString(),
+            time: values.date.getTime().toString(),
           }),
         }
       )
         .then((res) => {
-          if (res.ok) return res.json()
+          if (res.ok) {
+            return res.json()
+          }
           return res.json().then((json) => Promise.reject(json))
         })
         .then(({ url }) => {
@@ -165,7 +172,7 @@ const BookingForm = () => {
           id="date"
           name="date"
           onChange={formik.handleChange}
-          defaultValue={formik.values.date}
+          defaultValue={formik.values.date.toISOString()}
           onBlur={formik.handleBlur}
           value={formik.values.date}
           aria-describedby="dateHelpBlock"
