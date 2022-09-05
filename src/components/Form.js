@@ -53,13 +53,13 @@ const BookingForm = () => {
     },
     validate,
     onSubmit: (values) => {
-      fetch("/create-checkout-session", {
+      fetch("http://localhost:8080/create-checkout-session", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          id: 1,
+          id: "001",
         }),
       })
         .then((res) => {
